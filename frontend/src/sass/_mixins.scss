@@ -1,0 +1,7 @@
+@mixin respond($breakpoint) {
+ 
+  @if $breakpoint == smallScreen {
+    @media (min-width: 1em) and (max-width: 25em){ @content }; 
+  }  
+  
+}

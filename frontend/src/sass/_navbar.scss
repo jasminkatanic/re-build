@@ -1,0 +1,120 @@
+@import './variables';
+@import './mixins';
+
+.navbar{
+  display: flex;
+  width: 100%;
+  height: 8vh;
+  flex-direction: column;
+  justify-content: center;  
+
+  &-first{    
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;           
+    
+
+    &-search{
+      display: flex;
+      width: 80%;
+      height: 100%;
+      justify-content: center;      
+
+      input{
+        display: flex;
+        width: 80%;
+        height: 80%;
+        align-self: center;
+        border-radius: 1rem;
+        border: solid 1px $light-blue;;
+
+        &:focus{
+          outline: none;
+        }
+      }
+
+      @include respond(smallScreen){      
+        width: 100%;
+      }
+    }    
+    
+  } 
+  
+  &-second{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;    
+
+    &-content{
+      display: flex;
+      width: 90%;
+      height: 100%;
+      
+
+      &-movies{
+        display: flex;
+        align-self: center;
+        width: auto;        
+      }
+
+      &-toggle{
+      display: flex;
+      width: auto;
+      align-self: center;
+      justify-content: flex-start;      
+
+      input[type=checkbox]{
+        height: 80%;
+        width: 0;
+        visibility: hidden;
+      }
+
+      input[type=checkbox]:checked + label {
+        background: $light-blue;
+      }
+
+      input[type=checkbox]:checked + label::after {
+        left: calc(100% - 4px);
+        transform: translateX(-100%);
+      }
+
+      
+        label{
+          align-self: center;
+          cursor: pointer;
+          width: 48px;
+          height: 24px;
+          background: grey;
+          display: block;
+          border-radius: 24px;
+          position: relative;
+        }
+
+        label::after {
+          content: "";
+          position: absolute;
+          top: 4px;
+          left: 4px;
+          width: 16px;
+          height: 16px;
+          background: white;
+          border-radius: 16px;
+          transition: 0.3s;
+        }
+      }
+
+      &-shows{
+        display: flex;
+        align-self: center;
+        width: auto;
+        margin-left: 1%;        
+      }
+
+      @include respond(smallScreen){      
+        justify-content: center;
+      }
+    }
+  }
+}
