@@ -9,6 +9,7 @@ const Content = () => {
   const [title, setTitle] = useState('Movies');
   const [isMovies, setIsMovies] = useState(true);
   const [pageOffset, setPageOffset] = useState(0);
+  const [test, testBreacns] = useState();
  
   
 
