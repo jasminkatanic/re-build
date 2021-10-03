@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { FaStar } from "react-icons/fa";
+import Navbar from './Navbar';
 
 const Content = () => {
 
@@ -8,7 +9,7 @@ const Content = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [title, setTitle] = useState('Movies');
   const [isMovies, setIsMovies] = useState(true);
-  const [pageOffset, setPageOffset] = useState(0);
+  const [pageOffset, setPageOffset] = useState(0);  
  
   
 
@@ -62,24 +63,7 @@ const Content = () => {
 
     <div>          
     {/* SEARCH AND TOGGLE SECTION */}
-    <div className="navbar">
-      {console.log(pageOffset)}
-      <div className="navbar-first">
-        <div className="navbar-first-search">
-          <input value={searchTerm} onChange={event => setSearchTerm(event.target.value)} onKeyDown={searchData} type="text" placeholder="Enter your search term"/>
-        </div>        
-      </div>
-      <div className="navbar-second">
-        <div className="navbar-second-content">
-          <div className="navbar-second-content-movies">Movies</div>
-          <div className="navbar-second-content-toggle">
-            <input type="checkbox" id="toggle" onChange={toggleValue}/>
-            <label htmlFor="toggle"></label>
-          </div>
-          <div className="navbar-second-content-shows">TV Shows</div>
-        </div>
-      </div>      
-    </div>
+    <Navbar />
 
     {/* TITLE SECTION */}
     <h2>{title}</h2>
