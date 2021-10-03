@@ -140,7 +140,7 @@
     justify-content: center;
     height: 5vh;
     margin-top: 1%;
-    margin-bottom: 1%;
+    margin-bottom: 2%;
 
     button{
       border: none;
@@ -150,6 +150,7 @@
       box-shadow: 6px 6px 10px $black-color;
       font-size: 1.4rem;
       cursor: pointer;
+      align-self: center;
 
       @include respond(smallScreen){      
         width: 80%;
