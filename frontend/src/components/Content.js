@@ -10,7 +10,7 @@ const Content = () => {
   const [isMovies, setIsMovies] = useState(true);
   const [pageOffset, setPageOffset] = useState(0);
   const [category, setCategory] = useState('movies');
-  const {data, error} = useFetchData('http://localhost:5000/', category, pageOffset, searchTerm);  
+  const {data, error} = useFetchData(category, pageOffset, searchTerm);  
  
   
   function toggleValue(e){    

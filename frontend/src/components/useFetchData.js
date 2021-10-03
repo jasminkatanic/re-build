@@ -2,12 +2,12 @@ import { useState } from "react/cjs/react.development";
 import axios from "axios";
 import { useEffect } from "react";
 
-const useFetchData = (url, category, pageOffset, searchTerm) => {
+const useFetchData = (category, pageOffset, searchTerm) => {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
   
   useEffect(() => {        
-    axios.get(`${url}${category}?pageOffset=${pageOffset}${searchTerm ? `&search=${searchTerm}` : ''}`)       
+    axios.get(`http://localhost:5000/${category}?pageOffset=${pageOffset}${searchTerm ? `&search=${searchTerm}` : ''}`)       
     .then(res =>  {
       if(pageOffset>0){
         setData([...data, ...res.data])
@@ -16,7 +16,7 @@ const useFetchData = (url, category, pageOffset, searchTerm) => {
       }
     })      
     .catch(err => {setError(err)})
-  },[url, category, pageOffset, searchTerm])
+  },[category, pageOffset, searchTerm])
 
   return {data, error};
 }
